@@ -16,9 +16,40 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://heroku_zqzb4k8p:5m32btqsmb2vgs4lgbeo749q51@ds019866.mlab.com:19866/heroku_zqzb4k8p/employee');
+mongoose.connect('mongodb://heroku_zqzb4k8p:5m32btqsmb2vgs4lgbeo749q51@ds019866.mlab.com:19866/heroku_zqzb4k8p');
 var db = mongoose.connection;
 mongoose.Promise = global.Promise;
+
+// -------------------------------------------------
+
+// // MongoDB Configuration configuration
+// mongoose.connect('mongodb://admin:reactrocks@ds023593.mlab.com:23593/heroku_pg676kmk');
+// var db = mongoose.connection;
+
+db.on('error', function (err) {
+    console.log('Mongoose Error: ', err);
+});
+
+db.once('open', function () {
+    console.log('Mongoose connection successful.');
+});
+
+
+
+// -------------------------------------------------
+
+// // mongojs configuration
+// var mongojs = require('mongojs');
+// // var databaseUrl = "scraper"; //for local
+// var databaseUrl = "mongodb://heroku_m0x3bd23:4oe52tkq14f11u5tlobjk3gkj7@ds139645.mlab.com:39645/heroku_m0x3bd23";//for heroku
+// var collections = ["scrapedData"];
+
+// // hook our mongojs config to the db var
+// var db = mongojs(databaseUrl, collections);
+// db.on('error', function(err) {
+//   console.log('Database Error:', err);
+// });
+
 
 
 // Models
