@@ -13,6 +13,10 @@
     "start": "concurrently \"webpack --watch --colors\" \"nodemon src/server.js\"",
     "typings": "typings"
   },
+  "engines": {
+    "node": "~6.2.1",
+    "npm": "~3.9.3"
+  },
   "license": "MIT",
   "dependencies": {
     "@angular/common": "2.0.0-rc.5",

@@ -1,5 +1,6 @@
-node_modules/
-typings/
-src/bundle/
+# dependencies
+/node_modules
 
-
+#System Files
+.DS_Store
+Thumbs.db
