@@ -23,16 +23,16 @@ mongoose.Promise = global.Promise;
 // -------------------------------------------------
 
 // // MongoDB Configuration configuration
-// mongoose.connect('mongodb://admin:reactrocks@ds023593.mlab.com:23593/heroku_pg676kmk');
+// mongoose.connect('mongodb://heroku_zqzb4k8p:5m32btqsmb2vgs4lgbeo749q51@ds019866.mlab.com:19866/heroku_zqzb4k8p');
 // var db = mongoose.connection;
 
-db.on('error', function (err) {
-    console.log('Mongoose Error: ', err);
-});
+// db.on('error', function (err) {
+//     console.log('Mongoose Error: ', err);
+// });
 
-db.once('open', function () {
-    console.log('Mongoose connection successful.');
-});
+// db.once('open', function () {
+//     console.log('Mongoose connection successful.');
+// });
 
 
 
