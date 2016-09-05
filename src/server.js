@@ -110,7 +110,7 @@ db.once('open', function() {
 
 
     // all other routes are handled by Angular
-    app.get('/*', function(req, res) {
+    app.get('/', function(req, res) {
         res.sendFile(__dirname + './public/index.html');
     });
 
