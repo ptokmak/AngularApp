@@ -7,7 +7,7 @@ body {
 	margin-top: .75rem;
 }
 
-a:hover .fa-heart {
+a:hover .fa-fire {
 	color: #cc0000;
 }
 
@@ -25,3 +25,32 @@ table th, table tr td {
 	opacity: 0.9;
 }
 
+@media screen and (max-width: 640px) {
+
+	/*.work{
+		margin-top: 10%;
+	}
+	.main-section{
+		max-width: 580px;
+		width: 100%;
+		margin-top: 50px;		
+		float: left;			
+	}
+	.sidebar{
+		max-width: 580px;
+		width:100%;
+		float:left;
+	}
+	nav{
+
+		width: 97%;
+		margin-left: 3%;
+	}
+	#logo {
+		max-width: 650px;
+		width:100%;
+		max-height: 90px;
+		height: 100%;
+		margin-left: -10px ;		
+	}*/
+}
