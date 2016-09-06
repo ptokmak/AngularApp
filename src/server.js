@@ -5,10 +5,15 @@ var bodyParser = require('body-parser');
 var app = express();
 app.set('port', (process.env.PORT || 3000));
 
-app.use('/', express.static(__dirname + '/public'));
+//app.use('/', express.static(__dirname + '/public'));
 app.use('/scripts', express.static(__dirname + '/../node_modules'));
 app.use('/bundle', express.static(__dirname + '/bundle'));
 app.use('/app', express.static(__dirname + '/app'));
+
+//Testing favicon
+app.use(favicon(join(__dirname, "../public", "favicon.ico")));
+app.use(express.static(join(__dirname, '../public')));
+//end
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
