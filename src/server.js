@@ -29,7 +29,7 @@ app.use(express.static('./public'));
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.use(morgan('dev'));
+app.use(morgan('dev'));
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://heroku_zqzb4k8p:5m32btqsmb2vgs4lgbeo749q51@ds019866.mlab.com:19866/heroku_zqzb4k8p');
