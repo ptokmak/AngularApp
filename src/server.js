@@ -5,20 +5,31 @@ var bodyParser = require('body-parser');
 var app = express();
 app.set('port', (process.env.PORT || 3000));
 
-//app.use('/', express.static(__dirname + '/public'));
+app.use('/', express.static(__dirname + '/public'));
 app.use('/scripts', express.static(__dirname + '/../node_modules'));
 app.use('/bundle', express.static(__dirname + '/bundle'));
 app.use('/app', express.static(__dirname + '/app'));
 
-//Testing favicon
-app.use(favicon(join(__dirname, "../public", "favicon.ico")));
-app.use(express.static(join(__dirname, '../public')));
-//end
+// //Testing favicon
+// app.use(favicon(join(__dirname, "../public", "favicon.ico")));
+// app.use(express.static(join(__dirname, '../public')));
+// //end
 
+
+app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.text());
+app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
-app.use(morgan('dev'));
+app.use(express.static('./public'));
+
+
+
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+
+// app.use(morgan('dev'));
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://heroku_zqzb4k8p:5m32btqsmb2vgs4lgbeo749q51@ds019866.mlab.com:19866/heroku_zqzb4k8p');
@@ -114,10 +125,10 @@ db.once('open', function() {
     });
 
 
-    // // all other routes are handled by Angular
-    // app.get('/', function(req, res) {
-    //     res.sendFile(__dirname + '/public/index.html');
-    // });
+    // all other routes are handled by Angular
+    app.get('/', function(req, res) {
+        res.sendFile(__dirname + '/public/index.html');
+    });
 
 
     app.listen(app.get('port'), function() {
