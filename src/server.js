@@ -16,7 +16,7 @@ app.use('/app', express.static(__dirname + '/app'));
 // //end
 
 
-app.use(logger('dev'));
+// app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());

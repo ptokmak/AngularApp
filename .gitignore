@@ -1,6 +1,10 @@
-# dependencies
-/node_modules
+node_modules
+app/**/*.js
+app/**/*.js.map
+typings
+npm-debug.log
 
-#System Files
-.DS_Store
-Thumbs.db
+*.bak
+.idea
+*.iml
+*.ipr
