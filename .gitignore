@@ -4,6 +4,7 @@ app/**/*.js.map
 typings
 npm-debug.log
 
+
 *.bak
 .idea
 *.iml
